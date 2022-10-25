@@ -12,5 +12,4 @@ interface Dynamic {
     void clear();
     boolean contains(int data);
     boolean isEmpty();
-    boolean compare(int[] compArray);
 }

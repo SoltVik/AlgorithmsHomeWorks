@@ -10,27 +10,25 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.IntStream;
 
-public class DynamicArray implements Dynamic, Iterable<Integer>{
-    private static int[] array;
-    private static int counter = 0;
-    private static int size = 0;
-    private static final int DEFAULT_SIZE = 10;
+public class DynamicArray implements Dynamic, Iterable<Integer>, Comparable<DynamicArray>{
+    private int[] array;
+    private int counter = 0;
+    private int size = 0;
+    private final int DEFAULT_SIZE = 10;
 
     DynamicArray(){
-        array =  new int[DEFAULT_SIZE];
-        size = DEFAULT_SIZE;
+        this.array =  new int[DEFAULT_SIZE];
+        this.size = DEFAULT_SIZE;
     }
 
     DynamicArray(int capacity){
-        array =  new int[capacity];
-        size = array.length;
+        this.array =  new int[capacity];
+        this.size = array.length;
     }
 
     @Override
     public void add(int data) {
-        System.out.println(size + " " + counter +" " + array.length);
         growSize();
-        System.out.println(size + " " + counter +" " + array.length);
         array[counter++] = data;
     }
 
@@ -126,8 +124,12 @@ public class DynamicArray implements Dynamic, Iterable<Integer>{
     }
 
     @Override
-    public boolean compare(int[] compArray) {
-        return Arrays.equals(array,compArray);
+    public int compareTo(DynamicArray o) {
+        return this.getSum() - o.getSum();
+    }
+
+    private int getSum() {
+        return IntStream.of(array).sum();
     }
 
     @Override
