@@ -5,6 +5,7 @@ package LinkedList;
  *
  * @author Viktors Soltums
  * @version 06 Nov 2022
+ * @testsLink: https://github.com/SoltVik/AlgorithmsHomeWorks/tree/main/src/test/java/TestMyLinkedList.java
  */
 
 
@@ -48,8 +49,6 @@ public class MyLinkedList implements Linked {
         } else if (index < size && index >= 0) {
             if (index == 0) {
                 pushToHead(data);
-            } else if (index == size - 1) {
-                pushToTail(data);
             } else {
                 int counter = 0;
                 Node cursor = first;
