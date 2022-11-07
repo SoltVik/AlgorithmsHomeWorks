@@ -23,7 +23,7 @@ public class TestMyLinkedList {
     }
 
     @Test
-    public void pushToTail() {
+    public void testPushToTail() {
         Assertions.assertEquals(ls.size(), 3);
         Assertions.assertEquals(ls.get(0), 1);
         ls.pushToTail(5);
@@ -32,17 +32,16 @@ public class TestMyLinkedList {
     }
 
     @Test
-    public void pushToIndex() {
+    public void testPushToIndex() {
         Assertions.assertEquals(ls.size(), 3);
         Assertions.assertEquals(ls.get(2), 3);
         ls.pushToIndex(2,5);
         Assertions.assertEquals(ls.size(), 4);
-        ls.print();
         Assertions.assertEquals(ls.get(2), 5);
     }
 
     @Test
-    public void removeFirst() {
+    public void testRemoveFirst() {
         Assertions.assertEquals(ls.size(), 3);
         Assertions.assertEquals(ls.get(0), 1);
         ls.removeFirst();
@@ -51,7 +50,7 @@ public class TestMyLinkedList {
     }
 
     @Test
-    public void removeLast() {
+    public void testRemoveLast() {
         Assertions.assertEquals(ls.size(), 3);
         Assertions.assertEquals(ls.get(2), 3);
         ls.removeLast();
@@ -60,7 +59,7 @@ public class TestMyLinkedList {
     }
 
     @Test
-    public void remove() {
+    public void testRemove() {
         Assertions.assertEquals(ls.size(), 3);
         Assertions.assertEquals(ls.get(1), 2);
         ls.remove(1);
